@@ -8,15 +8,6 @@ io.on('connection', function(socket){
 		var documentDistance 
 			= Math.abs(data.top - data.window.height - data.position.top);
 		process.stdout.write(""
-				+ "top: " + data.top 
-				+ " top + win height: " 
-				+ (data.top - data.window.height - data.position.top)
-				+ " bottom: " + data.bottom
-				+ " height: " + (data.bottom - data.top) 
-				+ " position top: " + data.position.top 
-				+ " poistion left: " + data.position.left + "\n"
-				+ " window height: " + data.window.height 
-				+ " document height: " + data.document.height + "\n"
 				+ " percentage complete: " 
 				+ (documentDistance / data.document.height * 100)
 				+ "\n"
