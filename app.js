@@ -1,14 +1,6 @@
 var io = require('socket.io')();
 io.on('connection', function(socket){
 	console.log("connection.");
-	/*
-	console.log("^^^^^^^^^^\n");
-	console.log(io);
-	console.log("^^^^^^^^^^^");
-	console.log("##########\n");
-	console.log(socket);
-	console.log("###########");
-	*/
 	console.log(socket.client.conn.id);
 
 	socket.emit('message',	{ hello: 'Connected!'});
@@ -19,11 +11,24 @@ io.on('connection', function(socket){
 		console.log(socket.client.conn.id);
 		console.log(data);
 	})
-	socket.on('scroll', function(data) {
+
+	/*
+	 * external state change.
+	 */
+	/*
+	 * reflect the data package so if there is video scroll it will still work
+	 * just attach .video to the data-object.
+	 */
+	socket.on('statechange', function(data) {
 		var documentDistance 
-			= Math.abs(data.top - data.window.height - data.position.top);
+			= Math.abs(
+					data.articlePosition.top 
+					- data.articlePosition.window.height 
+					- data.articlePosition.position.top);
 		var percentageComplete
-			= documentDistance / data.document.height * 100;
+			= documentDistance / data.articlePosition.document.height * 100;
+		console.log(data.title);
+		// needs to send out the data package insted. Cache, only send changes?
 		socket.broadcast.emit('position', percentageComplete);
 
 		/*
