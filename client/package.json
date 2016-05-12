@@ -1,0 +1,19 @@
+{
+  "name": "syncscrollingclient",
+  "version": "1.0.0",
+  "description": "Client test app.Sync scrolling between web clients via node app.",
+  "main": "app.js",
+  "dependencies": {
+    "socket.io-client": "^1.4.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "author": "",
+  "license": "ISC"
+}
