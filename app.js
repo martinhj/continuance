@@ -15,25 +15,26 @@ io.on('connection', function(socket){
 	/*
 	 * external state change.
 	 */
+	
 	/*
 	 * reflect the data package so if there is video scroll it will still work
 	 * just attach .video to the data-object.
 	 */
 	socket.on('statechange', function(data) {
-		var documentDistance 
+		var documentDistance
 			= Math.abs(
-					data.articlePosition.top 
-					- data.articlePosition.window.height 
+					data.articlePosition.top
+					- data.articlePosition.window.height
 					- data.articlePosition.position.top);
 		var percentageComplete
 			= documentDistance / data.articlePosition.document.height * 100;
-		console.log(data.title);
+		// console.log(data.title);
 		// needs to send out the data package insted. Cache, only send changes?
 		socket.broadcast.emit('position', percentageComplete);
 
 		/*
 		process.stdout.write(""
-				+ " percentage complete: " 
+				+ " percentage complete: "
 				+ (documentDistance / data.document.height * 100)
 				+ "\n"
 				);
