@@ -7,10 +7,14 @@ io.on('connection', function(socket){
 	socket.broadcast.emit('message', { hello: 'test'});
 	io.emit('message', { hello: 'new connection...'});
 
+	socket.on('login', function(data) {
+		console.log(data);
+	});
+
 	socket.on('message', function(data) {
 		console.log(socket.client.conn.id);
 		console.log(data);
-	})
+	});
 
 	/*
 	 * external state change.
@@ -23,10 +27,9 @@ io.on('connection', function(socket){
 	socket.on('statechange', function(data) {
 		var documentDistance
 			= Math.abs(
-					data.articlePosition.top
-					- data.articlePosition.window.height
-					- data.articlePosition.position.top);
-		var percentageComplete
+					data.articlePosition.top -
+					data.articlePosition.window.height -
+					data.articlePosition.position.top); var percentageComplete
 			= documentDistance / data.articlePosition.document.height * 100;
 		// console.log(data.title);
 		// needs to send out the data package insted. Cache, only send changes?
@@ -39,6 +42,6 @@ io.on('connection', function(socket){
 				+ "\n"
 				);
 		*/
-	})
+	});
 });
 io.listen(3000);
