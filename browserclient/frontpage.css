@@ -1,0 +1,167 @@
+html, body {
+	width: 100%;
+	max-width: 100%;
+}
+
+.big {
+	width: 80%;	
+}
+
+.topicsentences>a {
+	position: relative;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.header {
+	font-weight: 800;
+	font-family: 'Open Sans', sans-serif;
+}
+.narticle {
+	position: relative;
+	width: none;
+	margin: auto;
+	margin-top: 1em;
+}
+.narticle img {
+	width: 100%;	
+}
+.narticle.small {
+	width: 50%;
+}
+.topicsentences .narticle {
+	width: 90%;
+	display: flex;
+	/*font-size: 0.5em;*/
+	font-size: 0.8em;
+	line-height: 1.1em;
+}
+.topicsentences .narticle .right,
+.topicsentences .narticle .left
+{
+	margin: 0;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.topicsentences .narticle .left {
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.left {
+	overflow: auto;
+	margin-right: 0.5em;
+}
+.right {
+	float:right;
+	margin-left: 0.5em;
+}
+.container {
+	width: 100%;
+}
+
+.container.small {
+	width: 80%;
+	display: flex;
+}
+p {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+.clip {
+	z-index: 1000;
+	position: relative;
+	min-width: 70px;
+	max-width: 70px;
+	min-height: 70px;
+	background-position: center center;
+	background-size: 200%;
+}
+
+#slider * {
+	transition: none;
+}
+
+.narticle .handle,
+.narticle .progressbar {
+	height: 15px;
+}
+
+.handle {
+	z-index: 998;
+}
+.progressbar {
+	z-index: 999;
+	text-align: right;
+	font-size: 0.85em;
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: white;
+}
+
+.topicsentences h3:first-of-type {
+	margin-top: 5em;
+}
+
+
+/*
+ * overriding styles from jquery css.
+ */
+.ui-slider .ui-slider-handle {
+	width: 1.3em;
+	height: 1.3em;
+}
+
+.ui-slider {
+	margin-top: 1em;
+	margin-bottom: 2.5em;
+}
+
+.ui-slider:last-of-type {
+
+	margin-bottom: 4em;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 0px solid #cccccc;
+	background: none;
+	font-weight: normal;
+	color: #2b2b2b;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	border: none;
+	background: none;
+	font-weight: normal;
+	color: #454545;
+}
+
+.ui-slider-handle {
+	outline-style: none;
+	top: -9px !important;
+}
+.ui-corner-all {
+	border-radius: 0;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.5em;
+}
+.ui-slider-horizontal {
+	height: 0.1em;
+}
+.ui-widget-content {
+	border: none;
+	background-color: rgba(215, 215, 215, 0.8);
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Client for syncScrolling</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,400italic">
+	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<div class="topdrawer up">
+		<!--<form>
+	  <input placeholder="Search" type="text">
+	  <button>
+	  <a href="/search/?query=">Search</a>
+	  </button>
+	  </form>-->
+	  <div id="continuance">
+		  <center>
+			  <a href="javascript:;" id="continuanceLogo">Continuance</a>
+		  </center>
+	  </div>
+	  <div class="container">
+		  <div class="topicsentences">
+		  </div>
+	  </div>
+	  <div class="handle">
+		  <span></span>
+	  </div>
+	  <div class="handle">
+		  <span></span>
+	  </div>
+	  <div class="progressbar">
+		  <span></span>
+	  </div>
+	</div>
+	<!--<div class="logo hidden"><h3 class=""><a href="frontpage.html">A newspaper you use to read.</a></h3></div>-->
+	<h1 class="center"> <a href="frontpage.html">A newspaper you use to read.  </a></h1>
+	<div class="main article" id="lorem1" data-title="lorem ipsum" >
+
+
+      <p>Researchers at Carnegie Mellon University have developed a new system for detecting bias in otherwise opaque algorithms. In&nbsp;<a href="http://www.andrew.cmu.edu/user/danupam/datta-sen-zick-oakland16.pdf">a paper presented </a>today&nbsp;at the <i>IEEE Symposium on Security and Privacy</i>, the researchers laid out a new method for assessing the impact of an algorithm's various input, potentially providing a crucial tool for corporations or governments that want to prove a given algorithm isn't inadvertently discriminatory. "These measures provide a foundation for the design of transparency reports that accompany system decisions," the paper reads, "and for testing tools useful for internal and external oversight."</p>
+<p>Called "Quantitative Input Influence," or QII, the system would test a given algorithm through a range of different inputs. Based on that data, the QII system could then effectively estimate which inputs or sets of inputs had the greatest causal effect on a given outcome. In the case of a credit score algorithm, the result might tell you that 80 percent of the variation in your credit score was the result of a specific outstanding bill, providing crucial insight into an otherwise opaque process. The same tools could also be used to test whether an algorithm is biased against a specific class of participants.</p>
+
+<!-- extended entry --> 
+<hr class="widget_boundry_marker hidden page_break">
+<p><q class="center">"a foundation for the design of transparency reports that accompany system decisions"</q></p>
+<p>The research comes after a number of high-profile accusations of algorithmic bias, most notably <a href="http://gizmodo.com/former-facebook-workers-we-routinely-suppressed-conser-1775461006">a </a><em><a href="http://gizmodo.com/former-facebook-workers-we-routinely-suppressed-conser-1775461006">Gizmodo</a></em><a href="http://gizmodo.com/former-facebook-workers-we-routinely-suppressed-conser-1775461006"> report</a> in which a former Facebook employee accused the company of suppressing conservative news in the Trending Topics box. In that case, the alleged bias was largely a result of intervention by human editors. Facebook responded by shifting Trending Topics to <a href="http://www.theverge.com/2016/5/23/11754812/facebook-trending-topics-changes-political-bias-senate-inquiry">a more automated system</a>.</p>
+<p>Algorithmic bias is also a serious issue in the court system. Earlier this week, ProPublica <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">unearthed evidence of racial bias</a> in a "risk assessment" algorithm, which is commonly used by judges in the sentencing process to estimate the risk of a convicted defendant committing similar crimes in the near future. Researchers <a href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">compared estimates</a> made by the algorithm to the observed rate of repeat offending during the same period. The results showed that the program tended to overestimate the risk of criminal activity for black defendants, even though race itself was not an input.</p>
+<p>For years, researchers and nonprofits have called for greater transparency in algorithms, although both groups have lacked both the power and the necessary technology to enforce those ideals. <a href="https://freedom-to-tinker.com/blog/felten/algorithms-can-be-more-accountable-than-people/">In 2014</a>, Princeton professor and FTC chief technologist Ed Felten argued algorithms could be even more accountable than human decision-making if corporate interests did not obscure the various inputs at work. "When people complain that algorithms aren’t transparent, the real problem is usually that someone is keeping the algorithm or its input data secret," Felten wrote. "Non-transparency is a choice they are making."</p>
+      <ul class="m-article__sources">
+
+
+    <li class="source"><strong>Source</strong><a href="http://www.andrew.cmu.edu/user/danupam/datta-sen-zick-oakland16.pdf">Algorithmic Transparency via Quantitative Input Influence</a></li>
+
+
+    <li class="tags"><strong>Related Items</strong>
+      <a href="/tag/research">research</a>
+    
+      <a href="/tag/transparency">transparency</a>
+    
+      <a href="/tag/cmu">cmu</a>
+    
+      <a href="/tag/algorithms">algorithms</a>
+    </li>
+
+</ul>
+
+    
+
+
+
+
+	</div>
+</body>
+	<script type="text/javascript" src="jquery-1.12.3.js"></script>
+	<!--http://www.appelsiini.net/projects/viewport-->
+	<script type="text/javascript" src="jquery.viewport.js"></script>
+	<script type="text/javascript" src="socket.io.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="scrolllength.js"></script>
+	<script type="text/javascript" src="scroll.js"></script>
+</html>

@@ -1,0 +1,54 @@
+<html>
+	<head></head>
+
+	<body>
+      <div id="kaiboshx0" class="project actaFont">
+		  <!--<video autoplay loop preload style="font-size: 0;">-->
+          <video loop preload style="font-size: 0;">
+              <source src="KAIBOSH.mp4" type="video/mp4">
+              <source src="movie.ogg" type="video/ogg">
+              Your browser does not support the video tag.
+          </video>
+          <p style="position: absolute; top: 0; left: 0;">
+	</body>
+	<script type="text/javascript" src="jquery-1.12.3.js"></script>
+	<script type="text/javascript" src="socket.io.js"></script>
+	<script type="text/javascript">
+var ignoreScrollEvents = false;
+var socket = io('http://pitr.local:3000');
+socket.on('videoposition', function (data) {
+	ignoreScrollEvents = true;
+	$('video')[0].currentTime = data.position;
+	console.log(data);
+});
+
+/*
+ * Need to send video data through the data object, not it's own object.
+ * Generalize main method for exhanging data, let websocket reflect the data and
+ * not needing to keep any specific format specific code on serverside.
+ */
+
+/*
+ * onplay og onstop starts and stops the video on other devices (but needs to
+ * be synced before play, should not be * updated through position (updated two
+ * times per second => 2fps video on
+ * slaves)
+ */
+
+$('video')[0].ontimeupdate = function () {
+	var ignore = ignoreScrollEvents;
+	ignoreScrollEvents = false;
+	if (ignore) {
+		return false;
+	} 
+	var videodata = {};
+	videodata.position = $('video')[0].currentTime;
+	videodata.function = function () {
+		consol.log("Trying and testing this.")
+	};
+	socket.emit('videoscroll', videodata);
+}
+// http://www.w3schools.com/tags/ref_av_dom.asp
+// http://www.w3schools.com/tags/ref_eventattributes.asp
+	</script>
+</html>

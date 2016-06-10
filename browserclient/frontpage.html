@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Frontpage for news site.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="index.css">
+	<link href="jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="frontpage.css">
+	<script type="text/javascript" src="socket.io.js"></script>
+	<!--	<script type="text/javascript" src="errorconsole.js"></script>	-->
+</head>
+<body>
+	<div class="topdrawer up">
+
+	  <div id="continuance">
+		  <center>
+			  <a href="javascript:;" id="continuanceLogo">Continuance</a>
+		  </center>
+	  </div>
+	  <div class="container">
+		  <form class="narticle big center">
+			  <input placeholder="Search" type="text">
+			  <button>
+				  <a href="/search/?query=">Search</a>
+			  </button>
+		  </form>	  <div class="topicsentences">
+
+			  <a style="z-index: 999;" href="index.html">
+				  <div class="narticle big center">
+					  <div class="clip left" style="background-image: url('https://placeimg.com/400/200/any');">
+						  <span></span>
+					  </div>
+					  <div class="right">
+					  <div class="header">An article you want to read</div>
+					  <p>Here it is a short teaser of the content. Let's have a look
+					  at what happens when it is more.</p>
+					  </div>
+					  <div class="progressbar" style="width: 35%;"><span>35%</span></div>
+					  <div class="handle"><span></span></div>
+				  </div>
+			  </a>
+
+			  <a style="z-index: 999;" href="index.html">
+				  <div class="narticle big center">
+					  <div class="clip left" style="background-image: url('https://placeimg.com/400/200/arch');">
+						  <span></span>
+					  </div>
+					  <div class="right">
+					  <div class="header">An article you want to read</div>
+					  <p>Here it is a short teaser of the content. Let's have a look
+					  at what happens when it is more.</p>
+					  </div>
+					  <div class="progressbar" style="width: 60%;"><span>60%</span></div>
+					  <div class="handle"><span></span></div>
+				  </div>
+			  </a>
+
+			  <a style="z-index: 999;" href="index.html">
+				  <div class="narticle big center">
+					  <div class="clip left" style="background-image: url('https://placeimg.com/400/200/tech');">
+						  <span></span>
+					  </div>
+					  <div class="right">
+					  <div class="header">An article you want to read</div>
+					  <p>Here it is a short teaser of the content. Let's have a look
+					  at what happens when it is more.</p>
+					  </div>
+					  <div class="progressbar" style="width: 75%;"><span>75%</span></div>
+					  <div class="handle"><span></span></div>
+				  </div>
+			  </a>
+
+			  <h3 class="big center">completeness</h3>
+			  <!--<div id="slider" class="big center ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">-->
+			  <div id="slider" class="big center ui-slider ui-slider-horizontal">
+				  <!--<div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"> </div>-->
+				  <!--<div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 16%; width: 51%;"> </div>-->
+				  <img src="imgs/sliderHandle.png" class="ui-slider-handle" tabindex="0" style="left: 17%">
+				  <img src="imgs/sliderHandle.png" class="ui-slider-handle" tabindex="0" style="left: 67%">
+				  <!--<span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 16%;"></span>-->
+				  <!--<span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 67%;"></span>-->
+			  </div>
+
+			  <h3 class="big center">date</h3>
+			  <div id="slider2" class="big center ui-slider ui-slider-horizontal">
+				  <!--<div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"> </div>-->
+				  <!--<div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 16%; width: 51%;"> </div>-->
+				  <img src="imgs/sliderHandle.png" class="ui-slider-handle" tabindex="0" style="left: 17%">
+				  <img src="imgs/sliderHandle.png" class="ui-slider-handle" tabindex="0" style="left: 67%">
+				  <!--<span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 16%;"></span>-->
+				  <!--<span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 67%;"></span>-->
+			  </div>
+		  </div>
+	  </div>
+
+
+	 
+
+	  <div class="handle">
+		  <span></span>
+	  </div>
+	  <div class="handle">
+		  <span></span>
+	  </div>
+	  <div class="progressbar" style="width: 100%;">
+		  <span></span>
+	  </div>
+	</div>
+
+	<!--<div class="logo"><h3 class=""><a href="frontpage.html">A newspaper you use to read.</a></h3></div>-->
+	<div class="overlay"><span></span></div>
+
+	<div class="main container">
+		<h1 class="narticle center"> A newspaper you use to read.  </h1>
+		
+		<a href="index.html">
+			<div class="narticle big center">
+				<img src="https://placeimg.com/400/200/any">
+				<div class="header">An article you want to read</div>
+				<p>Here it is a short teaser of the content.</p>
+			</div>
+		</a>
+		<div class="container small center">
+			<a class="narticle small" href="v.html">
+				<img src="https://placeimg.com/400/200/arch">
+				<div class="header">An article you want to read</div>
+				<p>Here it is a short teaser of the content.</p>
+			</a>
+			<a class="narticle small right" href="fb.html">
+				<img src="https://placeimg.com/400/200/tech">
+				<div class="header">An article you want to read</div>
+				<p>Here it is a short teaser of the content.</p>
+			</a>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-1.12.3.js"></script>
+<script type="text/javascript" src="reloader-client.js"></script>
+<script type="text/javascript" src="topcontainer.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="frontpage.js"></script>
+<script type="text/javascript" >
+$( "#slider" ).slider({
+	range: false,
+	values: [ 17, 67 ]
+});
+
+$( "#slider2" ).slider({
+	range: false,
+	values: [ 7, 88 ]
+});
+</script>
+<script src="jquery.ui.touch-punch.js"></script>
+<script>
+$('.ui-slider-handle').draggable({
+	containment: "parent"
+	/*
+    containment: [ 
+		$(this).parent().offset().left,
+		$(this).parent().offset().top,
+		$(this).parent().offset().left + $(this).parent().innerWith(),
+		$(this).parent().offset().top
+    ]
+	*/
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+
+<script>
+/*
+* Check this page for fallback font with this solution...
+ * https://www.lockedowndesign.com/load-google-fonts-asynchronously-for-page-speed/
+ */
+WebFont.load({
+	google: {
+		families: ['Open Sans:800', 'Lato:300, 700', 'Lora:300']
+	}
+});
+</script>
+
+</html>
