@@ -11,19 +11,11 @@ The library’s functionality is meant to be accessible for all, but is designed
 with the background of how to create a better reading environment for people
 with attention deficits.  The site’s developer only need to add it with: 
 
-<<<<<<< HEAD
 	<script src=”martinhj.net/continuum.js”></script>
 
 And when the content has loaded do a call to the function
 
 	continuance.add(documentContainerElement);
-=======
-	```<script src=”martinhj.net/continuum.js”></script>```
-
-And when the content has loaded do a call to the function
-
-	```continuance.add(documentContainerElement);```
->>>>>>> 2e3e60924b9f543d963fa407cc6cf97ab0a83e11
 
 where ‘documentContainerElement’ is the HTML element that the actual content is
 within.
