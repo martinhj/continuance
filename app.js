@@ -1,4 +1,6 @@
+'esversion: 6';
 var io = require('socket.io')();
+userposition = {};
 io.on('connection', function(socket){
 	console.log("connection.");
 	console.log(socket.client.conn.id);
@@ -16,10 +18,45 @@ io.on('connection', function(socket){
 		console.log(data);
 	});
 
+
+	/*
+	 * saving position on scroll sent from page.
+	 *
+	 * { '1465282262454': 
+   { page: 'http://pitr.local/~martinhj/syncScrolling/index.html',
+     positionId: 'P31',
+     containerId: 'lorem1',
+     time: '2016-06-07T06:53:49.786Z',
+     percentage: 73 }
+	 */
+	//userposition[]
+	socket.on('saveposition', function(data) {
+
+		if (userposition[Object.keys(data)] === undefined) {
+			userposition[Object.keys(data)] = {};
+		}
+		userposition[Object.keys(data)][data[Object.keys(data)].page] = data[Object.keys(data)];
+		/*
+		console.log(new Date().getTime());
+		console.log(data);
+		*/
+	});
+
+
+	socket.on('getpositions', function(data) {
+		console.log("sending positions...");
+		if (data !== null) {
+			console.log(data);
+			console.log(userposition[data]);
+			socket.emit('positions', userposition[data]);
+		} else {
+			socket.emit('positions', "no userid");
+		}
+	});
+	
 	/*
 	 * external state change.
 	 */
-	
 	/*
 	 * reflect the data package so if there is video scroll it will still work
 	 * just attach .video to the data-object.
@@ -45,3 +82,9 @@ io.on('connection', function(socket){
 	});
 });
 io.listen(3000);
+
+
+const repl = require('repl');
+var msg = 'message';
+
+repl.start('> ').context.m = msg;
