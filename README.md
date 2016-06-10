@@ -10,10 +10,13 @@ to help them assosiate back into the content they read before.
 The library’s functionality is meant to be accessible for all, but is designed
 with the background of how to create a better reading environment for people
 with attention deficits.  The site’s developer only need to add it with: 
+
 	```<script src=”martinhj.net/continuum.js”></script>```
 
 And when the content has loaded do a call to the function
+
 	```continuance.add(documentContainerElement);```
+
 where ‘documentContainerElement’ is the HTML element that the actual content is
 within.
 
